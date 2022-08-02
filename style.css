@@ -1,0 +1,27 @@
+.calculator {
+    margin: auto;
+    width: 360px;
+    height: 400px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 4px;
+}
+
+.display {
+    grid-column: 1/5;
+    height: 100px;
+    /* align-self: center; */
+    /* height: 30px; */
+    background-color: aqua;
+    text-align: end;
+    padding: 12px 12px 0px 0px;
+}
+
+h1, h3 {
+    margin: 0px;
+}
+
+.operator {
+    background-color: rgb(228, 198, 198);
+}
