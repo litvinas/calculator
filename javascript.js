@@ -32,7 +32,7 @@ operatorButtons.forEach((button) => {
         button.classList.add('clicked');
         setTimeout(() => button.classList.remove('clicked'), 100);
     
-        numbers[currentNumber] = parseInt(equation);
+        numbers[currentNumber] = parseFloat(equation);
         updateDisplay(button.innerText);
         equation = '';
         currentNumber++;
