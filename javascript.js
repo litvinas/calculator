@@ -3,6 +3,7 @@ const operatorButtons = document.querySelectorAll('.operator');
 const equationDisplay = document.querySelector('.equation-display');
 const answerDisplay = document.querySelector('.answer-display');
 const equalButton = document.querySelector('.equal');
+const clearButton = document.querySelector('.clear');
 
 let equation = '';
 let numbers = [];
@@ -19,6 +20,8 @@ const updateEquation = function(char) {
 }
 
 numberButtons.forEach((button) => {button.addEventListener('click', function() {
+    button.classList.add('clicked');
+    setTimeout(() => button.classList.remove('clicked'), 100);
     updateDisplay(button.innerText);
     updateEquation(button.innerText);
     console.log(equation);
@@ -26,6 +29,9 @@ numberButtons.forEach((button) => {button.addEventListener('click', function() {
 
 operatorButtons.forEach((button) => {
     button.addEventListener('click', () => {
+        button.classList.add('clicked');
+        setTimeout(() => button.classList.remove('clicked'), 100);
+    
         numbers[currentNumber] = parseInt(equation);
         updateDisplay(button.innerText);
         equation = '';
@@ -43,7 +49,13 @@ equalButton.addEventListener('click', function () {
     answerDisplay.textContent = operate(operation, numbers[0], numbers[1]);
 
 });
-    
+
+clearButton.addEventListener('click', function() {
+    equation = '';
+    currentnumber = '';
+    equationDisplay.textContent = '';
+    answerDisplay.textContent = '';
+});
 
 
 const add = function(a, b) {
